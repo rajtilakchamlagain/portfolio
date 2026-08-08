@@ -1,13 +1,14 @@
 # Rajtilak Chamlagain | Portfolio
 
-An ultra-premium, light-mode editorial portfolio engineered to showcase AI research, forensic computer vision pipelines, and deep technical expertise. 
+An ultra-premium, "Next-Gen Frutiger Aero" portfolio engineered to showcase AI research, forensic computer vision pipelines, and deep technical expertise. 
 
-## 🚀 The Architecture (Light Mode Editorial)
-This repository utilizes a stark, high-end editorial grid system inspired by elite design agencies and architectural firms:
-- **Absolute Light Mode:** An off-white canvas paired with jet black text and sharp 1px borders, creating an architectural blueprint feel.
-- **Editorial Typography:** High-contrast `Playfair Display` serif paired with ultra-clean `Inter` sans-serif.
-- **GSAP (GreenSock):** Subtle, highly-tuned scroll reveals and stagger animations for a buttery smooth reading experience.
-- **0% AI CSS:** No glowing gradients, no neo-morphism, no generic glass tricks. Just pure, hard-coded layout mastery.
+## 🚀 The Architecture (Next-Gen Frutiger Aero)
+This repository breaks away from generic frontend templates, utilizing industry-standard cinematic web technologies to create a breathtaking futuristic aesthetic:
+- **Three.js WebGL Custom Shaders:** A dynamic, interactive fluid/aurora background (Cyan, Blue, Green) that mathematically calculates ripples and reacts to the user's mouse position in real-time.
+- **Ultra-Premium Glassmorphism:** Heavy utilization of `backdrop-filter`, multi-layered box-shadows (edge-lighting), and specular highlights to create physically accurate 3D glass UI elements.
+- **VanillaTilt 3D Physics:** Cards physically tilt and reflect light based on the cursor's coordinates.
+- **GSAP (GreenSock):** Complex, scroll-linked cinematic stagger animations.
+- **Custom Interactive Cursor:** A dual-element tracking cursor with a radioactive glow effect that expands on interactables.
 
 ## 🧠 Highlighted Research
 - **ClearSight AI:** Autonomous Spectral Gap Engine for zero-shot threshold gating in CCTV forensics (SDIR - IIT Guwahati).
