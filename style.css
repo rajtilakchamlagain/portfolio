@@ -76,7 +76,7 @@ body {
     100% { transform: translate(100px, 50px) scale(1.2); }
 }
 
-/* Glossy Glass Utilities (The Frutiger Aero signature) */
+/* Glossy Glass Utilities */
 .glossy-glass {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
@@ -231,6 +231,7 @@ main {
     padding: 0 5%;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
 }
 
 .hero-content {
@@ -336,6 +337,40 @@ main {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
+}
+
+/* Services Marquee */
+.services-marquee-container {
+    margin-top: 50px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.services-marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--aero-cyan);
+    font-size: 1.1rem;
+}
+
+.services-marquee span {
+    padding-right: 20px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* Grid Layouts */
@@ -473,9 +508,193 @@ main {
 
 .timeline-desc {
     color: #e2e8f0;
+    margin-bottom: 15px;
 }
 
-/* Tags */
+/* Modals */
+.btn-modal {
+    background: transparent;
+    border: none;
+    color: var(--aero-cyan);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn-modal:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--aero-cyan);
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); 
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h2 {
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.modal-content h3 {
+    color: var(--aero-cyan);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    color: #e2e8f0;
+}
+
+.close-btn {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--aero-cyan);
+}
+
+
+/* Education & Certs Grid */
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.edu-card {
+    padding: 40px 30px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.edu-card h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.edu-item h4 {
+    color: var(--aero-cyan);
+    margin-bottom: 5px;
+}
+
+.edu-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Tabs */
+.tabs-container {
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: var(--text-muted);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+.tab-btn.active {
+    background: var(--aero-cyan);
+    color: var(--bg-primary);
+    border-color: var(--aero-cyan);
+    box-shadow: 0 0 15px rgba(34,211,238,0.5);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tags & Skills */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -491,26 +710,6 @@ main {
     font-size: 0.85rem;
     color: var(--aero-cyan);
     box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
-}
-
-/* Skills */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-}
-
-.skills-category {
-    padding: 40px;
-    border-radius: 20px;
-}
-
-.skills-category h3 {
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    color: white;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 10px;
 }
 
 .skills-list {
@@ -642,5 +841,8 @@ main {
     }
     .timeline-item {
         padding-left: 30px;
+    }
+    .tab-buttons {
+        flex-direction: column;
     }
 }
