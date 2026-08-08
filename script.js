@@ -1,131 +1,188 @@
-// Global functions for Modals and Tabs so they can be called from inline HTML attributes
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add('show');
-        // Prevent body scroll when modal is open
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-    }
-}
-
-function openTab(event, tabId) {
-    // Hide all tab content
-    const tabContents = document.getElementsByClassName('tab-content');
-    for (let i = 0; i < tabContents.length; i++) {
-        tabContents[i].classList.remove('active');
-    }
-    
-    // Remove active class from all buttons
-    const tabBtns = document.getElementsByClassName('tab-btn');
-    for (let i = 0; i < tabBtns.length; i++) {
-        tabBtns[i].classList.remove('active');
-    }
-    
-    // Show current tab and add active class to button
-    document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Close modal when clicking outside of the modal content
-    window.onclick = function(event) {
-        if (event.target.classList.contains('modal')) {
-            event.target.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-    }
+    
+    // --- Preloader Logic ---
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 2000);
 
-    // Intersection Observer for scroll animations (fade-up)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    // --- Custom Cursor Logic ---
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
+    const links = document.querySelectorAll('.magnetic-link, .work-card, .exp-box, .timeline-row');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
 
-    const fadeElements = document.querySelectorAll('.fade-up');
-    fadeElements.forEach(el => {
-        observer.observe(el);
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Instant cursor move
+        cursor.style.left = `${mouseX}px`;
+        cursor.style.top = `${mouseY}px`;
     });
 
-    // Frutiger Aero Water Drops / Bubbles Generator
-    const waterDropsContainer = document.getElementById('water-drops');
-    
-    function createBubble() {
-        if (!waterDropsContainer) return;
+    // Smooth follower move
+    function animateCursor() {
+        followerX += (mouseX - followerX) * 0.15;
+        followerY += (mouseY - followerY) * 0.15;
         
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
+        follower.style.left = `${followerX}px`;
+        follower.style.top = `${followerY}px`;
         
-        const size = Math.random() * 40 + 10; 
-        const left = Math.random() * 100; 
-        const animationDuration = Math.random() * 10 + 10; 
-        const delay = Math.random() * 5; 
-        
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${left}%`;
-        bubble.style.bottom = `-50px`;
-        bubble.style.position = 'absolute';
-        
-        bubble.style.borderRadius = '50%';
-        bubble.style.background = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.1) 60%, transparent)';
-        bubble.style.boxShadow = 'inset 0 0 10px rgba(255,255,255,0.5), inset 2px 0 5px rgba(34, 211, 238, 0.3)';
-        bubble.style.backdropFilter = 'blur(2px)';
-        bubble.style.opacity = '0';
-        
-        bubble.style.animation = `float-up ${animationDuration}s linear ${delay}s infinite`;
-        
-        waterDropsContainer.appendChild(bubble);
-        
-        setTimeout(() => {
-            bubble.remove();
-            createBubble();
-        }, (animationDuration + delay) * 1000);
+        requestAnimationFrame(animateCursor);
     }
-    
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes float-up {
-            0% {
-                transform: translateY(0) scale(1) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-50vh) scale(1.1) translateX(20px);
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100vh) scale(1) translateX(-20px);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    animateCursor();
 
-    // Generate initial bubbles
-    for (let i = 0; i < 20; i++) {
-        createBubble();
+    // Hover states for cursor
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor-hover');
+        });
+        link.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor-hover');
+        });
+    });
+
+    // --- GSAP Scroll Animations ---
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade up elements
+    gsap.utils.toArray('.fade-in-up').forEach(element => {
+        gsap.fromTo(element, 
+            { y: 50, opacity: 0 },
+            {
+                y: 0, 
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                }
+            }
+        );
+    });
+
+    // Split Text animation for massive headers
+    if (typeof SplitText !== "undefined") {
+        const splits = document.querySelectorAll(".split-text");
+        splits.forEach(split => {
+            const splitText = new SplitText(split, {type: "chars"});
+            gsap.from(splitText.chars, {
+                opacity: 0,
+                y: 50,
+                rotateX: -90,
+                stagger: 0.05,
+                duration: 1,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: split,
+                    start: "top 80%"
+                }
+            });
+        });
+    } else {
+        // Fallback if SplitText (premium plugin) isn't available
+        gsap.from(".split-text", {
+            opacity: 0, y: 50, duration: 1.5, stagger: 0.2, ease: "power4.out"
+        });
     }
+
+    // Work Section Parallax/Stagger
+    gsap.from(".work-card", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".work-gallery",
+            start: "top 70%"
+        }
+    });
+
+    // --- Three.js WebGL Interactive Background (Neural Network / Particles) ---
+    const canvas = document.getElementById('webgl-canvas');
+    if (!canvas) return;
+
+    const scene = new THREE.Scene();
+    
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 30;
+
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Create Particles
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 700;
+    
+    const posArray = new Float32Array(particlesCount * 3);
+    
+    for(let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 100;
+    }
+    
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    
+    // Material
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.15,
+        color: 0x22d3ee, // Cyan accent
+        transparent: true,
+        opacity: 0.8,
+        blending: THREE.AdditiveBlending
+    });
+    
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+
+    // Lines connecting close particles (Neural Network effect)
+    const lineMaterial = new THREE.LineBasicMaterial({
+        color: 0x22d3ee,
+        transparent: true,
+        opacity: 0.15
+    });
+
+    // Mouse Interaction
+    let targetX = 0;
+    let targetY = 0;
+
+    document.addEventListener('mousemove', (event) => {
+        targetX = (event.clientX / window.innerWidth) * 2 - 1;
+        targetY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    // Animation Loop
+    const clock = new THREE.Clock();
+
+    function tick() {
+        const elapsedTime = clock.getElapsedTime();
+
+        // Rotate particles slowly
+        particlesMesh.rotation.y = elapsedTime * 0.05;
+        particlesMesh.rotation.x = elapsedTime * 0.02;
+
+        // Mouse Parallax effect
+        particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
+        particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
+
+        // Render
+        renderer.render(scene, camera);
+
+        // Call tick again on the next frame
+        window.requestAnimationFrame(tick);
+    }
+    
+    tick();
+
+    // Handle Window Resize
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
 });

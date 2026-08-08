@@ -3,376 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajtilak Chamlagain | Portfolio</title>
-    <meta name="description" content="Portfolio of Rajtilak Chamlagain - ML Engineer, Computer Vision, and Digital Governance.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <title>Rajtilak Chamlagain | AI & Forensics</title>
+    <meta name="description" content="Portfolio of Rajtilak Chamlagain - Engineering Intelligence, Removing Bias.">
+    
+    <!-- Ultra-Premium Fonts: Clash Display (Bold Sans) and Playfair Display (Elegant Serif) -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Background -->
-    <div class="frutiger-bg">
-        <div class="aurora-glow aurora-1"></div>
-        <div class="aurora-glow aurora-2"></div>
-        <div class="aurora-glow aurora-3"></div>
-        <div class="water-drops" id="water-drops"></div>
+<body class="loading">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-text">INITIALIZING <br><span class="serif">neural networks</span></div>
+        <div class="progress-bar"></div>
     </div>
 
+    <!-- WebGL Background Container -->
+    <canvas id="webgl-canvas"></canvas>
+
     <!-- Navigation -->
-    <nav class="navbar glossy-glass">
-        <div class="nav-content">
-            <a href="#" class="logo">Rajtilak<span class="dot">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Research & Open Source</a></li>
-                <li><a href="#skills">Skills</a></li>
-            </ul>
-            <a href="#contact" class="btn-aero">Connect</a>
+    <nav class="premium-nav">
+        <div class="nav-brand">Rajtilak<span class="serif">.</span></div>
+        <div class="nav-links">
+            <a href="#work" class="magnetic-link">Selected Work</a>
+            <a href="#expertise" class="magnetic-link">Expertise</a>
+            <a href="#timeline" class="magnetic-link">Timeline</a>
+            <a href="assets/RTC_Resume.pdf" target="_blank" class="magnetic-link highlight">View Resume</a>
         </div>
     </nav>
 
-    <main>
+    <!-- Main Content -->
+    <div class="scroll-container">
         <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero-content fade-up">
-                <div class="status-badge glossy-pill">
-                    <span class="pulse-dot"></span>
-                    B.Tech CSE Student | Academic Research Intern @ IIT Guwahati
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-top">
+                    <span class="fade-in-up">B.Tech CSE '28 @ BVEC</span>
+                    <span class="fade-in-up">Researcher @ IIT Guwahati</span>
                 </div>
-                <h1 class="hero-title">Engineering Intelligence,<br><span class="text-cyan">Removing Bias.</span></h1>
-                <p class="hero-desc">
-                    I am <strong>Rajtilak Chamlagain</strong>. Bridging the gap between deep learning mathematics and real-world implementation in forensics, AI, and digital governance.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn-aero btn-primary">Explore Research <i class="fas fa-arrow-right"></i></a>
-                    <a href="../CV_Resume/RTC_Resume.pdf" target="_blank" class="btn-aero btn-secondary"><i class="fas fa-file-pdf"></i> View Resume</a>
-                </div>
-                
-                <!-- Services Marquee -->
-                <div class="services-marquee-container fade-up delay-2">
-                    <div class="services-marquee">
-                        <span>Web Development • Computer Vision • Deep Learning • Cybersecurity • NLP • Data Analytics • Research Skills • Database Development • e-Governance Prototypes • </span>
-                        <span>Web Development • Computer Vision • Deep Learning • Cybersecurity • NLP • Data Analytics • Research Skills • Database Development • e-Governance Prototypes • </span>
-                    </div>
-                </div>
+                <h1 class="massive-text split-text">ENGINEERING</h1>
+                <h1 class="massive-text split-text">INTELLIGENCE</h1>
+                <h2 class="sub-hero fade-in-up">Bridging deep learning mathematics <span class="serif">with real-world forensics.</span></h2>
             </div>
             
-            <div class="hero-visual fade-up delay-1">
-                <div class="glass-sphere">
-                    <div class="sphere-reflection"></div>
-                    <i class="fas fa-brain orb-icon"></i>
-                </div>
+            <div class="scroll-indicator fade-in-up">
+                <span>Discover</span>
+                <div class="line"></div>
             </div>
         </section>
 
-        <!-- Experience Section (with Modals) -->
-        <section id="experience" class="section">
-            <div class="section-header fade-up">
-                <h2>Professional Journey</h2>
-                <div class="heading-line"></div>
-            </div>
-            <div class="timeline">
-                <!-- IITG -->
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glossy-glass-cyan">
-                        <div class="timeline-header">
-                            <h3>Academic Research Intern</h3>
-                            <span class="timeline-date">July 2026 - Present</span>
-                        </div>
-                        <h4 class="timeline-company"><i class="fas fa-microscope"></i> Technology Innovation Hub (TIH), IIT Guwahati</h4>
-                        <p class="timeline-desc">Engineered forensic tracking solutions to process CCTV footage, completely removing human bias from suspect identification.</p>
-                        <button class="btn-modal" onclick="openModal('modal-iitg')">Deep Dive <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                
-                <!-- DITEC -->
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glossy-glass-green">
-                        <div class="timeline-header">
-                            <h3>Industrial Engineering Intern</h3>
-                            <span class="timeline-date">July 2026</span>
-                        </div>
-                        <h4 class="timeline-company"><i class="fas fa-building"></i> DITEC, Govt. of Assam</h4>
-                        <p class="timeline-desc">Analyzed digital governance ecosystem, ePrastuti workflows, and state-level architecture for seamless G2C services.</p>
-                        <button class="btn-modal" onclick="openModal('modal-ditec')">Deep Dive <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-
-                <!-- Mother Old Age Home -->
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glossy-glass">
-                        <div class="timeline-header">
-                            <h3>Social Work Intern</h3>
-                            <span class="timeline-date">July 2025</span>
-                        </div>
-                        <h4 class="timeline-company"><i class="fas fa-heart"></i> Mother Old Age Home</h4>
-                        <p class="timeline-desc">Provided compassionate support to elderly residents lacking familial support. Fostered an empathetic community environment.</p>
-                        <button class="btn-modal" onclick="openModal('modal-social')">Deep Dive <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects & Open Source Section -->
-        <section id="projects" class="section">
-            <div class="section-header fade-up">
-                <h2>Research & Open Source</h2>
-                <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Deep Learning Models, Forensics, and Architectural Mockups</p>
-                <div class="heading-line"></div>
+        <!-- Selected Work (GSAP Horizontal Scroll) -->
+        <section class="work-section" id="work">
+            <div class="work-header pinned-header">
+                <h2 class="section-title">Selected <span class="serif">Innovations</span></h2>
+                <p>AI, Forensics, and Architectural Prototypes.</p>
             </div>
             
-            <div class="projects-grid">
-                <!-- ClearSight AI -->
-                <div class="project-card glossy-glass fade-up">
-                    <div class="project-content">
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/ClearSight" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3>ClearSight AI</h3>
-                        <h4>Forensic Person Re-Identification</h4>
-                        <p>An advanced Video Re-ID tracking pipeline (SDIR - IIT Guwahati) engineered to eliminate "Threshold Guessing". Features an <strong>Autonomous Spectral Gap Engine</strong> and <strong>Kinetic Occlusion Recovery</strong> to survive massive crowd occlusions.</p>
-                        <div class="tags">
-                            <span>Deep Learning</span><span>PyTorch</span><span>Computer Vision</span>
-                        </div>
+            <div class="work-gallery">
+                <div class="work-card">
+                    <div class="work-card-content">
+                        <h3>01. ClearSight AI</h3>
+                        <p class="work-desc">Autonomous Spectral Gap Engine for zero-shot threshold gating in CCTV forensics.</p>
+                        <div class="work-tags"><span>PyTorch</span> <span>FAISS</span></div>
+                        <a href="https://github.com/rajtilakchamlagain/ClearSight" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-content">
+                        <h3>02. AirScript-CV</h3>
+                        <p class="work-desc">Air Writing Recognition using Computer Vision & MediaPipe for interactive digital canvases.</p>
+                        <div class="work-tags"><span>Python</span> <span>MediaPipe</span></div>
+                        <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- AirScript-CV -->
-                <div class="project-card glossy-glass fade-up delay-1">
-                    <div class="project-content">
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3>AirScript-CV</h3>
-                        <h4>Air Writing Recognition</h4>
-                        <p>Turn empty space into an interactive digital canvas. Uses MediaPipe for real-time hand tracking and computer vision to extract characters drawn in the air using gesture controls.</p>
-                        <div class="tags">
-                            <span>Python</span><span>MediaPipe</span><span>Machine Learning</span>
-                        </div>
+                <div class="work-card">
+                    <div class="work-card-content">
+                        <h3>03. BioSync</h3>
+                        <p class="work-desc">Intelligent biometric attendance system utilizing QR Codes and DeepFace neural networks.</p>
+                        <div class="work-tags"><span>Full-Stack</span> <span>DeepFace</span></div>
+                        <a href="https://github.com/rajtilakchamlagain/BioSync-Biometric-Attendance" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- BioSync -->
-                <div class="project-card glossy-glass fade-up delay-2">
-                    <div class="project-content">
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/BioSync-Biometric-Attendance" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3>BioSync Attendance</h3>
-                        <h4>Capstone Prototype</h4>
-                        <p>Intelligent biometric attendance system built during the DITEC internship. Replaces traditional logbooks with a seamless two-step verification using QR Codes and <strong>DeepFace</strong> neural networks.</p>
-                        <div class="tags">
-                            <span>Full-Stack</span><span>Biometrics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Assam Tourism Portal (Mockup) -->
-                <div class="project-card glossy-glass fade-up">
-                    <div class="project-content">
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3>Assam Tourism Portal</h3>
-                        <h4>Architectural Mockup (DITEC)</h4>
-                        <p>A G2C front-end engineering assignment simulating an ultra-premium tourism portal. Designed to strictly follow official <strong>ePrastuti</strong> frameworks and <strong>GIGW 3.0</strong> compliance standards.</p>
-                        <div class="tags">
-                            <span>JavaScript</span><span>e-Governance Mockup</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IntelliFilter -->
-                <div class="project-card glossy-glass fade-up delay-1">
-                    <div class="project-content">
-                        <div class="project-links">
-                            <a href="https://intellifilter-bvec.streamlit.app" target="_blank" class="btn-icon"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/rajtilakchamlagain/IntelliFilter" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3>IntelliFilter</h3>
-                        <h4>SMS/Email Spam Classifier</h4>
-                        <p>End-to-end NLP model to automatically detect and filter spam messages. Designed architecture, trained models, and deployed as a live Streamlit web application.</p>
-                        <div class="tags">
-                            <span>Python</span><span>NLP</span><span>Streamlit</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lunar Registry -->
-                <div class="project-card glossy-glass fade-up delay-2">
-                    <div class="project-content">
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/lunar-registry" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3>Lunar Registry</h3>
-                        <h4>Creative Web Dev</h4>
-                        <p>"Selling the best part of the Moon's land in lower prize... Sale is on!" A fun, creative front-end project focusing on interactive CSS and web design aesthetics.</p>
-                        <div class="tags">
-                            <span>CSS</span><span>Web Design</span>
-                        </div>
+                <div class="work-card">
+                    <div class="work-card-content">
+                        <h3>04. Assam Tourism</h3>
+                        <p class="work-desc">Architectural mockup simulating GIGW compliance and ePrastuti frameworks for DITEC.</p>
+                        <div class="work-tags"><span>JavaScript</span> <span>G2C</span></div>
+                        <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education & Certifications -->
-        <section id="education" class="section">
-            <div class="section-header fade-up">
-                <h2>Education & Credentials</h2>
-                <div class="heading-line"></div>
-            </div>
+        <!-- Technical Expertise (Brutalist Grid) -->
+        <section class="expertise-section" id="expertise">
+            <h2 class="section-title centered">The <span class="serif">Arsenal</span></h2>
             
-            <div class="edu-grid">
-                <div class="edu-column fade-up">
-                    <div class="glossy-glass edu-card">
-                        <h3><i class="fas fa-graduation-cap"></i> Academics</h3>
-                        <div class="edu-item">
-                            <h4>B.Tech Computer Engineering</h4>
-                            <p>Barak Valley Engineering College (2024 - 2028)</p>
-                        </div>
-                        <div class="edu-item">
-                            <h4>HSLC (82%)</h4>
-                            <p>Biswanath Jnan Bharati (2021 - 2023)</p>
-                        </div>
-                    </div>
+            <div class="expertise-grid">
+                <div class="exp-box">
+                    <h3 class="exp-number">01</h3>
+                    <h4 class="exp-title">Core Development</h4>
+                    <p>Python, C, C++, JavaScript, Node.js, Express.js, MongoDB.</p>
                 </div>
-                
-                <div class="edu-column fade-up delay-1">
-                    <div class="glossy-glass edu-card">
-                        <h3><i class="fas fa-certificate"></i> Certifications</h3>
-                        <div class="edu-item">
-                            <h4>Cybersecurity0x01 ENCODERSPRO</h4>
-                            <p>Network & Information Security</p>
-                        </div>
-                        <div class="edu-item">
-                            <h4>Visharad II (Vocal)</h4>
-                            <p>Bhatkhande Sangit Vidyapith (Classical Singing)</p>
-                        </div>
-                    </div>
+                <div class="exp-box">
+                    <h3 class="exp-number">02</h3>
+                    <h4 class="exp-title">Artificial Intelligence</h4>
+                    <p>PyTorch, Deep Learning, Computer Vision, NLP, Streamlit.</p>
                 </div>
+                <div class="exp-box">
+                    <h3 class="exp-number">03</h3>
+                    <h4 class="exp-title">Cybersecurity</h4>
+                    <p>OSINT, Network Security, IT Law (Cybersecurity0x01 ENCODERSPRO).</p>
+                </div>
+                <div class="exp-box accent-box">
+                    <h3 class="exp-number">04</h3>
+                    <h4 class="exp-title serif">The Arts</h4>
+                    <p>Visharad II (Vocal) Classical Singing & FIDE-rated Chess.</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="edu-column fade-up delay-2">
-                    <div class="glossy-glass edu-card">
-                        <h3><i class="fas fa-users"></i> Leadership & Arts</h3>
-                        <div class="edu-item">
-                            <h4>College Magazine Designer</h4>
-                            <p>Creative direction and editorial design.</p>
-                        </div>
-                        <div class="edu-item">
-                            <h4>Chess Club</h4>
-                            <p>FIDE-rated competitive chess player.</p>
-                        </div>
+        <!-- Professional Timeline -->
+        <section class="timeline-section" id="timeline">
+            <div class="timeline-container">
+                <div class="timeline-row">
+                    <div class="timeline-time">2026 - Present</div>
+                    <div class="timeline-data">
+                        <h3>Research Intern <span class="serif">@ IIT Guwahati</span></h3>
+                        <p>Eliminating human bias in police triage systems using mathematical algorithms and cosine similarity vector sorting.</p>
+                    </div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-time">July 2026</div>
+                    <div class="timeline-data">
+                        <h3>Engineering Intern <span class="serif">@ DITEC, Govt. of Assam</span></h3>
+                        <p>Deep-dive analysis of state digital infrastructure: Sewa Setu, ePrastuti, and Assam State Data Center operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-time">2024 - 2028</div>
+                    <div class="timeline-data">
+                        <h3>B.Tech CSE <span class="serif">@ BVEC</span></h3>
+                        <p>Currently pursuing Computer Engineering. Active as College Magazine Designer and Swargam Social Media Head.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Comprehensive Skills (Tabbed) -->
-        <section id="skills" class="section">
-            <div class="section-header fade-up">
-                <h2>Technical Arsenal</h2>
-                <div class="heading-line"></div>
+        <!-- Footer -->
+        <footer class="premium-footer" id="contact">
+            <h1 class="footer-title">LET'S <span class="serif">TALK</span></h1>
+            <div class="footer-links">
+                <a href="mailto:rjtiksrm@gmail.com" class="magnetic-link">Email</a>
+                <a href="https://www.linkedin.com/in/rajtilak-chamlagain-7129942a3" target="_blank" class="magnetic-link">LinkedIn</a>
+                <a href="https://github.com/rajtilakchamlagain" target="_blank" class="magnetic-link">GitHub</a>
             </div>
-            
-            <div class="tabs-container glossy-glass fade-up">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="openTab(event, 'tab-core')">Core Stack</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-security')">Security</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-soft')">Soft Skills</button>
-                </div>
-                
-                <div id="tab-core" class="tab-content active">
-                    <div class="skills-list">
-                        <div class="skill-tag">Python</div>
-                        <div class="skill-tag">C</div>
-                        <div class="skill-tag">C++</div>
-                        <div class="skill-tag">JavaScript</div>
-                        <div class="skill-tag">Node.js</div>
-                        <div class="skill-tag">Express.js</div>
-                        <div class="skill-tag">MongoDB</div>
-                        <div class="skill-tag">HTML/CSS</div>
-                        <div class="skill-tag">Tailwind CSS</div>
-                        <div class="skill-tag">PyTorch</div>
-                        <div class="skill-tag">Deep Learning</div>
-                        <div class="skill-tag">NLP</div>
-                    </div>
-                </div>
-                
-                <div id="tab-security" class="tab-content">
-                    <div class="skills-list">
-                        <div class="skill-tag">OSINT</div>
-                        <div class="skill-tag">Network Security</div>
-                        <div class="skill-tag">Information Security</div>
-                        <div class="skill-tag">IT Law</div>
-                        <div class="skill-tag">Data Analytics</div>
-                    </div>
-                </div>
-                
-                <div id="tab-soft" class="tab-content">
-                    <div class="skills-list">
-                        <div class="skill-tag">Leadership</div>
-                        <div class="skill-tag">Communication</div>
-                        <div class="skill-tag">Event Management</div>
-                        <div class="skill-tag">Strategic Thinking</div>
-                        <div class="skill-tag">Problem Solving</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer glossy-glass-footer">
-        <div class="footer-content">
-            <h2>Let's Engineer the Future</h2>
-            <p>Always open to discussing AI research, robust security logic, and transformative digital governance.</p>
-            <div class="social-links">
-                <a href="mailto:rjtiksrm@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/rajtilak-chamlagain-7129942a3" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/rajtilakchamlagain" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-            <p class="copyright">&copy; 2026 Rajtilak Chamlagain. Crafted with Frutiger Aero aesthetics.</p>
-        </div>
-    </footer>
-
-    <!-- Modals -->
-    <div id="modal-iitg" class="modal">
-        <div class="modal-content glossy-glass">
-            <span class="close-btn" onclick="closeModal('modal-iitg')">&times;</span>
-            <h2>Technology Innovation Hub (IIT Guwahati)</h2>
-            <h3>Academic Research Intern</h3>
-            <p><strong>The Problem:</strong> In standard Video Person Re-Identification (Re-ID), police systems rely heavily on manual "Threshold Guessing". In blurry, dark CCTV footage, this human bias often leads to catastrophic false positives.</p>
-            <p><strong>The Solution (ClearSight AI):</strong> I engineered an Autonomous Spectral Gap Engine. Instead of relying on a human, the algorithm sorts the cosine similarity vectors of everyone in the crowd, calculates the maximal first-derivative drop-off, and autonomously places a dynamic, zero-shot threshold gate.</p>
-            <p><strong>Future Scope:</strong> Upgrading backend to handle live RTSP camera feeds and integrating FAISS vector databases to index millions of identities in milliseconds.</p>
-            <p><em>Supervised by Dr. Mahapara Khursid.</em></p>
-        </div>
+            <p class="copyright">&copy; 2026 Rajtilak Chamlagain.</p>
+        </footer>
     </div>
 
-    <div id="modal-ditec" class="modal">
-        <div class="modal-content glossy-glass">
-            <span class="close-btn" onclick="closeModal('modal-ditec')">&times;</span>
-            <h2>Directorate of Information Technology (DITEC), Govt. of Assam</h2>
-            <h3>Industrial Engineering Intern</h3>
-            <p>Underwent extensive practical exposure to the state's digital governance ecosystem. Explored the mechanics behind citizen-centric platforms like <strong>Sewa Setu</strong>, <strong>e-Prastuti</strong>, the <strong>Grievance Redressal System</strong>, <strong>eOffice</strong>, and the <strong>Right of Way (RoW) Portal</strong>.</p>
-            <p>Studied Aadhaar AUA/KUA frameworks, DNS management, and the Assam State Data Center operations.</p>
-            <p><em>Grateful to Hon’ble Minister Shri Dr. Ranoj Pegu and Director Ashwani Kumar for their visionary approach to a Digital Assam.</em></p>
-        </div>
-    </div>
-
-    <div id="modal-social" class="modal">
-        <div class="modal-content glossy-glass">
-            <span class="close-btn" onclick="closeModal('modal-social')">&times;</span>
-            <h2>Mother Old Age Home</h2>
-            <h3>Social Work Intern</h3>
-            <p>Engaged with senior citizens through meaningful conversations and recreational activities. Organized daily routines, cultural programs, and awareness activities, contributing to a positive and supportive living environment.</p>
-            <p>Developed strong interpersonal, communication, teamwork, empathy, and leadership skills while understanding the importance of inclusive social welfare initiatives.</p>
-        </div>
-    </div>
-
+    <!-- GSAP & Three.js Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
