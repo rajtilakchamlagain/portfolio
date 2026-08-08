@@ -1,13 +1,13 @@
 # Rajtilak Chamlagain | Portfolio
 
-An ultra-premium, interactive portfolio engineered to showcase AI research, forensic computer vision pipelines, and deep technical expertise. 
+An ultra-premium, light-mode editorial portfolio engineered to showcase AI research, forensic computer vision pipelines, and deep technical expertise. 
 
-## 🚀 The Architecture (X-Factor Design)
-This repository breaks away from generic frontend templates, utilizing industry-standard cinematic web technologies:
-- **Three.js (WebGL):** A custom, interactive 3D particle network (representing neural networks) that reacts to user mouse movements in real-time.
-- **GSAP (GreenSock):** Complex, scroll-linked cinematic animations (parallax, stagger reveals) used by award-winning websites.
-- **Brutalist Typography:** High-contrast `Clash Display` paired with elegant `Playfair Display` serif italics.
-- **Magnetic Custom Cursor:** Replaces the default OS cursor with a dynamic element that interacts with the DOM using `mix-blend-mode: difference`.
+## 🚀 The Architecture (Light Mode Editorial)
+This repository utilizes a stark, high-end editorial grid system inspired by elite design agencies and architectural firms:
+- **Absolute Light Mode:** An off-white canvas paired with jet black text and sharp 1px borders, creating an architectural blueprint feel.
+- **Editorial Typography:** High-contrast `Playfair Display` serif paired with ultra-clean `Inter` sans-serif.
+- **GSAP (GreenSock):** Subtle, highly-tuned scroll reveals and stagger animations for a buttery smooth reading experience.
+- **0% AI CSS:** No glowing gradients, no neo-morphism, no generic glass tricks. Just pure, hard-coded layout mastery.
 
 ## 🧠 Highlighted Research
 - **ClearSight AI:** Autonomous Spectral Gap Engine for zero-shot threshold gating in CCTV forensics (SDIR - IIT Guwahati).

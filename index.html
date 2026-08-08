@@ -3,180 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajtilak Chamlagain | AI & Forensics</title>
-    <meta name="description" content="Portfolio of Rajtilak Chamlagain - Engineering Intelligence, Removing Bias.">
+    <title>Rajtilak Chamlagain | Portfolio</title>
+    <meta name="description" content="Rajtilak Chamlagain - Engineering Intelligence, Removing Bias.">
     
-    <!-- Ultra-Premium Fonts: Clash Display (Bold Sans) and Playfair Display (Elegant Serif) -->
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <!-- High-End Typography: Playfair Display (Serif) and Inter (Sans-Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="loading">
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+<body>
+    
+    <div class="site-wrapper">
+        <!-- Navigation -->
+        <header class="header">
+            <div class="logo">
+                <span class="serif">Rajtilak</span> Chamlagain
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#work" class="nav-link">Selected Work</a>
+                <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="assets/RTC_Resume.pdf" target="_blank" class="nav-link btn-resume">Resume ↗</a>
+            </nav>
+        </header>
 
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-text">INITIALIZING <br><span class="serif">neural networks</span></div>
-        <div class="progress-bar"></div>
-    </div>
-
-    <!-- WebGL Background Container -->
-    <canvas id="webgl-canvas"></canvas>
-
-    <!-- Navigation -->
-    <nav class="premium-nav">
-        <div class="nav-brand">Rajtilak<span class="serif">.</span></div>
-        <div class="nav-links">
-            <a href="#work" class="magnetic-link">Selected Work</a>
-            <a href="#expertise" class="magnetic-link">Expertise</a>
-            <a href="#timeline" class="magnetic-link">Timeline</a>
-            <a href="assets/RTC_Resume.pdf" target="_blank" class="magnetic-link highlight">View Resume</a>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="scroll-container">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <div class="hero-top">
-                    <span class="fade-in-up">B.Tech CSE '28 @ BVEC</span>
-                    <span class="fade-in-up">Researcher @ IIT Guwahati</span>
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero grid-section bottom-border">
+                <div class="hero-text-block right-border fade-up">
+                    <h1 class="hero-title serif">Engineering<br>Intelligence,<br>Removing Bias.</h1>
                 </div>
-                <h1 class="massive-text split-text">ENGINEERING</h1>
-                <h1 class="massive-text split-text">INTELLIGENCE</h1>
-                <h2 class="sub-hero fade-in-up">Bridging deep learning mathematics <span class="serif">with real-world forensics.</span></h2>
-            </div>
-            
-            <div class="scroll-indicator fade-in-up">
-                <span>Discover</span>
-                <div class="line"></div>
-            </div>
-        </section>
-
-        <!-- Selected Work (GSAP Horizontal Scroll) -->
-        <section class="work-section" id="work">
-            <div class="work-header pinned-header">
-                <h2 class="section-title">Selected <span class="serif">Innovations</span></h2>
-                <p>AI, Forensics, and Architectural Prototypes.</p>
-            </div>
-            
-            <div class="work-gallery">
-                <div class="work-card">
-                    <div class="work-card-content">
-                        <h3>01. ClearSight AI</h3>
-                        <p class="work-desc">Autonomous Spectral Gap Engine for zero-shot threshold gating in CCTV forensics.</p>
-                        <div class="work-tags"><span>PyTorch</span> <span>FAISS</span></div>
-                        <a href="https://github.com/rajtilakchamlagain/ClearSight" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
+                <div class="hero-info-block fade-up delay-1">
+                    <p class="hero-subtitle">Bridging deep learning mathematics with real-world forensics and digital governance.</p>
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">ML Engineer & Researcher</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value">Guwahati, India</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Education</span>
+                            <span class="meta-value">B.Tech CSE '28 @ BVEC</span>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Experience / Timeline -->
+            <section id="about" class="experience grid-section bottom-border">
+                <div class="section-title-col right-border fade-up">
+                    <h2 class="section-heading">Professional<br><span class="serif">Journey</span></h2>
+                </div>
+                <div class="section-content-col fade-up delay-1">
+                    
+                    <div class="exp-item bottom-border-inner">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Academic Research Intern</h3>
+                            <span class="exp-date">2026 - Present</span>
+                        </div>
+                        <h4 class="exp-company serif">Technology Innovation Hub, IIT Guwahati</h4>
+                        <p class="exp-desc">Engineered forensic tracking solutions to process CCTV footage, completely removing human bias from suspect identification via Autonomous Spectral Gap Engines.</p>
+                    </div>
+
+                    <div class="exp-item bottom-border-inner">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Industrial Engineering Intern</h3>
+                            <span class="exp-date">July 2026</span>
+                        </div>
+                        <h4 class="exp-company serif">DITEC, Govt. of Assam</h4>
+                        <p class="exp-desc">Deep-dive analysis of state digital infrastructure: Sewa Setu, ePrastuti, Grievance Redressal, and Assam State Data Center operations.</p>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Social Work Intern</h3>
+                            <span class="exp-date">July 2025</span>
+                        </div>
+                        <h4 class="exp-company serif">Mother Old Age Home</h4>
+                        <p class="exp-desc">Provided compassionate support and organized cultural awareness programs for elderly residents lacking familial support.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Selected Work -->
+            <section id="work" class="work bottom-border">
+                <div class="work-header bottom-border-inner fade-up">
+                    <h2 class="section-heading">Selected<br><span class="serif">Innovations</span></h2>
                 </div>
                 
-                <div class="work-card">
-                    <div class="work-card-content">
-                        <h3>02. AirScript-CV</h3>
-                        <p class="work-desc">Air Writing Recognition using Computer Vision & MediaPipe for interactive digital canvases.</p>
-                        <div class="work-tags"><span>Python</span> <span>MediaPipe</span></div>
-                        <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card right-border bottom-border-inner fade-up">
+                        <div class="project-top">
+                            <span class="project-num">01</span>
+                            <a href="https://github.com/rajtilakchamlagain/ClearSight" target="_blank" class="project-link">View Repository ↗</a>
+                        </div>
+                        <h3 class="project-title serif">ClearSight AI</h3>
+                        <p class="project-desc">Autonomous Spectral Gap Engine for zero-shot threshold gating in CCTV forensics. Features Kinetic Occlusion Recovery.</p>
+                        <div class="project-tags">
+                            <span>PyTorch</span>
+                            <span>Computer Vision</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="work-card">
-                    <div class="work-card-content">
-                        <h3>03. BioSync</h3>
-                        <p class="work-desc">Intelligent biometric attendance system utilizing QR Codes and DeepFace neural networks.</p>
-                        <div class="work-tags"><span>Full-Stack</span> <span>DeepFace</span></div>
-                        <a href="https://github.com/rajtilakchamlagain/BioSync-Biometric-Attendance" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
+                    <!-- Project 2 -->
+                    <div class="project-card bottom-border-inner fade-up delay-1">
+                        <div class="project-top">
+                            <span class="project-num">02</span>
+                            <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" class="project-link">View Repository ↗</a>
+                        </div>
+                        <h3 class="project-title serif">AirScript-CV</h3>
+                        <p class="project-desc">Air Writing Recognition using Computer Vision & MediaPipe. Turn empty space into an interactive digital canvas.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>MediaPipe</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="work-card">
-                    <div class="work-card-content">
-                        <h3>04. Assam Tourism</h3>
-                        <p class="work-desc">Architectural mockup simulating GIGW compliance and ePrastuti frameworks for DITEC.</p>
-                        <div class="work-tags"><span>JavaScript</span> <span>G2C</span></div>
-                        <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" class="work-link">View Repo <i class="fas fa-arrow-right"></i></a>
+                    <!-- Project 3 -->
+                    <div class="project-card right-border fade-up">
+                        <div class="project-top">
+                            <span class="project-num">03</span>
+                            <a href="https://github.com/rajtilakchamlagain/BioSync-Biometric-Attendance" target="_blank" class="project-link">View Repository ↗</a>
+                        </div>
+                        <h3 class="project-title serif">BioSync</h3>
+                        <p class="project-desc">Intelligent biometric attendance system utilizing QR Codes and DeepFace neural networks. (DITEC Capstone).</p>
+                        <div class="project-tags">
+                            <span>Full-Stack</span>
+                            <span>DeepFace</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Technical Expertise (Brutalist Grid) -->
-        <section class="expertise-section" id="expertise">
-            <h2 class="section-title centered">The <span class="serif">Arsenal</span></h2>
-            
-            <div class="expertise-grid">
-                <div class="exp-box">
-                    <h3 class="exp-number">01</h3>
-                    <h4 class="exp-title">Core Development</h4>
-                    <p>Python, C, C++, JavaScript, Node.js, Express.js, MongoDB.</p>
+                    <!-- Project 4 -->
+                    <div class="project-card fade-up delay-1">
+                        <div class="project-top">
+                            <span class="project-num">04</span>
+                            <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" class="project-link">View Repository ↗</a>
+                        </div>
+                        <h3 class="project-title serif">Assam Tourism Mockup</h3>
+                        <p class="project-desc">Architectural mockup simulating GIGW compliance and ePrastuti frameworks for a premium G2C portal.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="exp-box">
-                    <h3 class="exp-number">02</h3>
-                    <h4 class="exp-title">Artificial Intelligence</h4>
-                    <p>PyTorch, Deep Learning, Computer Vision, NLP, Streamlit.</p>
-                </div>
-                <div class="exp-box">
-                    <h3 class="exp-number">03</h3>
-                    <h4 class="exp-title">Cybersecurity</h4>
-                    <p>OSINT, Network Security, IT Law (Cybersecurity0x01 ENCODERSPRO).</p>
-                </div>
-                <div class="exp-box accent-box">
-                    <h3 class="exp-number">04</h3>
-                    <h4 class="exp-title serif">The Arts</h4>
-                    <p>Visharad II (Vocal) Classical Singing & FIDE-rated Chess.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Professional Timeline -->
-        <section class="timeline-section" id="timeline">
-            <div class="timeline-container">
-                <div class="timeline-row">
-                    <div class="timeline-time">2026 - Present</div>
-                    <div class="timeline-data">
-                        <h3>Research Intern <span class="serif">@ IIT Guwahati</span></h3>
-                        <p>Eliminating human bias in police triage systems using mathematical algorithms and cosine similarity vector sorting.</p>
+            <!-- Expertise & Certifications -->
+            <section id="expertise" class="expertise grid-section bottom-border">
+                <div class="section-title-col right-border fade-up">
+                    <h2 class="section-heading">Technical<br><span class="serif">Arsenal</span></h2>
+                </div>
+                <div class="section-content-col fade-up delay-1">
+                    <div class="skills-wrapper">
+                        <div class="skills-col right-border-inner">
+                            <h3 class="skills-heading serif">Engineering</h3>
+                            <ul class="skills-list">
+                                <li>Python, C, C++</li>
+                                <li>JavaScript, Node.js</li>
+                                <li>MongoDB, Express.js</li>
+                                <li>PyTorch, NLP</li>
+                                <li>Streamlit</li>
+                            </ul>
+                        </div>
+                        <div class="skills-col right-border-inner">
+                            <h3 class="skills-heading serif">Security</h3>
+                            <ul class="skills-list">
+                                <li>OSINT</li>
+                                <li>Network Security</li>
+                                <li>Information Security</li>
+                                <li>IT Law</li>
+                            </ul>
+                        </div>
+                        <div class="skills-col">
+                            <h3 class="skills-heading serif">Credentials</h3>
+                            <ul class="skills-list">
+                                <li>Cybersecurity0x01 ENCODERSPRO</li>
+                                <li>Visharad II (Vocal) Classical</li>
+                                <li>FIDE-Rated Chess Player</li>
+                                <li>College Magazine Designer</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-row">
-                    <div class="timeline-time">July 2026</div>
-                    <div class="timeline-data">
-                        <h3>Engineering Intern <span class="serif">@ DITEC, Govt. of Assam</span></h3>
-                        <p>Deep-dive analysis of state digital infrastructure: Sewa Setu, ePrastuti, and Assam State Data Center operations.</p>
-                    </div>
-                </div>
-                <div class="timeline-row">
-                    <div class="timeline-time">2024 - 2028</div>
-                    <div class="timeline-data">
-                        <h3>B.Tech CSE <span class="serif">@ BVEC</span></h3>
-                        <p>Currently pursuing Computer Engineering. Active as College Magazine Designer and Swargam Social Media Head.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
         <!-- Footer -->
-        <footer class="premium-footer" id="contact">
-            <h1 class="footer-title">LET'S <span class="serif">TALK</span></h1>
-            <div class="footer-links">
-                <a href="mailto:rjtiksrm@gmail.com" class="magnetic-link">Email</a>
-                <a href="https://www.linkedin.com/in/rajtilak-chamlagain-7129942a3" target="_blank" class="magnetic-link">LinkedIn</a>
-                <a href="https://github.com/rajtilakchamlagain" target="_blank" class="magnetic-link">GitHub</a>
+        <footer class="footer">
+            <div class="footer-left">
+                <p>&copy; 2026 Rajtilak Chamlagain.</p>
             </div>
-            <p class="copyright">&copy; 2026 Rajtilak Chamlagain.</p>
+            <div class="footer-right">
+                <a href="mailto:rjtiksrm@gmail.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/rajtilak-chamlagain-7129942a3" target="_blank" class="footer-link">LinkedIn</a>
+                <a href="https://github.com/rajtilakchamlagain" target="_blank" class="footer-link">GitHub</a>
+            </div>
         </footer>
     </div>
 
-    <!-- GSAP & Three.js Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP for smooth scroll reveals -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
