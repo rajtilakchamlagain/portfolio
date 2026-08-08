@@ -1,0 +1,92 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Intersection Observer for scroll animations (fade-up)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const fadeElements = document.querySelectorAll('.fade-up');
+    fadeElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // Frutiger Aero Water Drops / Bubbles Generator
+    const waterDropsContainer = document.getElementById('water-drops');
+    
+    function createBubble() {
+        if (!waterDropsContainer) return;
+        
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        // Randomize bubble properties
+        const size = Math.random() * 40 + 10; // 10px to 50px
+        const left = Math.random() * 100; // 0% to 100%
+        const animationDuration = Math.random() * 10 + 10; // 10s to 20s
+        const delay = Math.random() * 5; // 0s to 5s
+        
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${left}%`;
+        bubble.style.bottom = `-50px`;
+        bubble.style.position = 'absolute';
+        
+        // Frutiger Aero Bubble Styling
+        bubble.style.borderRadius = '50%';
+        bubble.style.background = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.1) 60%, transparent)';
+        bubble.style.boxShadow = 'inset 0 0 10px rgba(255,255,255,0.5), inset 2px 0 5px rgba(34, 211, 238, 0.3)';
+        bubble.style.backdropFilter = 'blur(2px)';
+        bubble.style.opacity = '0';
+        
+        // Animation
+        bubble.style.animation = `float-up ${animationDuration}s linear ${delay}s infinite`;
+        
+        waterDropsContainer.appendChild(bubble);
+        
+        // Remove and recreate bubble to prevent DOM overload
+        setTimeout(() => {
+            bubble.remove();
+            createBubble();
+        }, (animationDuration + delay) * 1000);
+    }
+    
+    // Inject keyframes for bubble floating
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) scale(1) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-50vh) scale(1.1) translateX(20px);
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1) translateX(-20px);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Initial batch of bubbles
+    for (let i = 0; i < 20; i++) {
+        createBubble();
+    }
+});
